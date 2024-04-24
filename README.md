@@ -8,3 +8,9 @@ AMQP, which stands for Advanced Message Queueing Protocol, is an open standard a
 
 The total number of queue in my machine was also 20, which is accurate to how many times I called cargo run on the publisher during this slow subscriber test.
 
+![3 Subscriber Terminal](img\3subs_terminal.jpg "3 Subscriber Terminal")
+![3 Subscriber RabbitMQ](img\3subs_rabbitmq.jpg "3 Subscriber RabbitMQ")
+
+The spike of the message queue was reduced quicker than before because the event processing load was split to all three subscribers, instead of being processed by just one.
+
+The only improvement I can think of for these two programs would be to define what the get_handler_action() function will actually do, since up until now it's only been filled with the todo!() macro.
